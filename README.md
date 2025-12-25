@@ -6,11 +6,11 @@ MarketPulse: An end-to-end data engineering project featuring a robust Python pi
 2.	I stored the daily stock data in a JSON file (with proper formatting to prevent formatting errors) to optimize API usage.
 3.	Developed a Python script that iterates through nested timeseries data to extract key metrics (Open, High, Low, Close)
 
-## Challenge:
+### Challenge:
 ⦁	Initial raw data from Python IDLE used single quotes (''), which caused json.decode errors as the standard JSON format requires double quotes ("").
 ⦁	This was fixed by implementing a manual data sanitation step (and exploring automated string replacement) to ensure the local storage strictly follows JSON standards and seamlessly parses with Python's json library
 
-## Setup Instructions:
+### Setup Instructions:
 1.	Navigate to the Alpha Vantage Support Page
 2.	Sign up (it's free!)
 3.	Save the API key you get securely.
