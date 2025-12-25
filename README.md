@@ -4,7 +4,7 @@ MarketPulse: An end-to-end data engineering project featuring a robust Python pi
 ## Phase 1: Data Pipeline
 1. I developed a Python script to fetch daily stock data (IBM) via Alpha Vantage API.
 2. I stored the daily stock data in a JSON file (with proper formatting to prevent formatting errors) to optimize API usage.
-3. Developed a Python script that iterates through nested timeseries data to extract key metrics (Open, High, Low, Close)
+3. Developed a Python script that iterates through nested timeseries data to extract key metrics (Open, High, Low, Close, Volume)
 
 ### Challenge:
 - Initial raw data from Python IDLE used single quotes (''), which caused json.decode errors as the standard JSON format requires double quotes ("").
@@ -18,7 +18,8 @@ MarketPulse: An end-to-end data engineering project featuring a robust Python pi
 5. Copy the Python script to fetch daily stock data from this repository.
 6. Uncomment the section that uses the API key to get the daily stock data
 7. Rewrite the "load_dotenv()" as "load_dotenv(file_name.env)", and "os.getenv()" as "os.getenv(VARIABLE_NAME)";
-8. Store the daily stock data (from the first run of the script) in your local storage to optimize API usage
+8. Store the daily stock data (from the initial run of the script) in your local storage to optimize API usage
 9. Comment out the section that uses the API key, and uncomment the section that uses your local file with the daily stock data.
-10. Run the Python script to fetch the key metrics through the nested timeseries
-11. Your data pipeline is ready!
+10. Rename the file name "local_file.json" (in the line "with open('local_file.json', 'r') as file:") with the name of the file which stores the daily stock data from the initial script run.
+11. Run the Python script to fetch the key metrics through the nested timeseries
+12. Your data pipeline is ready!
