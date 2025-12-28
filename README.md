@@ -1,7 +1,3 @@
-# MarketPulse-A-Real-Time-Data-Finance-Engine
-
-MarketPulse: An end-to-end data engineering project featuring a robust Python pipeline, local JSON caching for API optimization, and a SQL-backed historical data warehouse.
-
 ## Phase 1: API to JSON
 
 This phase focuses on getting the IBM daily stock exchange data using an API key and storing that static data into a JSON file for further processing
