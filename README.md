@@ -14,12 +14,11 @@ MarketPulse: An end-to-end data engineering project featuring a robust Python pi
 1. Install the required libraries by running pip install -r requirements.txt in your terminal.
 2. Navigate to the Alpha Vantage Support Page
 3. Sign up (it's free!)
-4. Save the API key you get securely in a file_name.env file with the format VARIABLE_NAME=YOUR_KEY.
+4. Save the API key you get securely in a .env file with the format VARIABLE_NAME=YOUR_KEY.
 5. Copy the Python script to fetch daily stock data from this repository.
 6. Uncomment the section that uses the API key to get the daily stock data
-7. Rewrite the "load_dotenv()" as "load_dotenv(file_name.env)", and "os.getenv()" as "os.getenv(VARIABLE_NAME)";
-8. Store the daily stock data (from the initial run of the script) in your local storage to optimize API usage
-9. Comment out the section that uses the API key, and uncomment the section that uses your local file with the daily stock data.
-10. Rename the file name "local_file.json" (in the line "with open('local_file.json', 'r') as file:") with the name of the file which stores the daily stock data from the initial script run.
-11. Run the Python script to fetch the key metrics through the nested timeseries
-12. Your data pipeline is ready!
+7. Store the daily stock data (from the initial run of the script) in your local storage to optimize API usage
+8. Comment out the section that uses the API key, and uncomment the section that uses your local file with the daily stock data.
+9. Rename the file name "local_file.json" (in the line "with open('local_file.json', 'r') as file:") with the name of the file which stores the daily stock data from the initial script run.
+10. Run the Python script to fetch the key metrics through the nested timeseries
+11. Your data pipeline is ready!
