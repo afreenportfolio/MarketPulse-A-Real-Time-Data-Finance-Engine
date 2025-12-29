@@ -39,7 +39,7 @@ This phase involves transforming raw historical data into financial indicators t
 
 ### Setup Instruction
 1. Download `requirements.txt` and install the required libraries by running `pip install -r requirements.txt` in your terminal.
-2. Copy/download the python script from this repository and run it using `python real_time_market_pulse_dashboard_stock_analysis.py`
+2. Copy/download the python script from this repository and run it using `python real_time_market_pulse_dashboard_stock_analyzer.py`
 
 ### Challenges
 - When calculating the 5-day moving average, the first four rows of the dataset naturally lack enough preceding data to generate a result. To maintain a 5-day moving average, the first four days of any dataset lack sufficient history for a calculation. I had to ensure the logic accounted for these `NaN` (Not a Number) values to avoid calculation errors or broken visualizations in the future dashboard. To do this, I chose to preserve these as `NULL` values in the database to maintain data integrity. This ensures the archive remains an accurate historical record, while leaving the "cleanup" for the visualization layer in Phase 5.
