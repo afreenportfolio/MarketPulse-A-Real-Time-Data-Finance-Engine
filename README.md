@@ -28,4 +28,5 @@ Built a financial logic engine to calculate 5-day Moving Averages and generate a
 - Tech Stack: `Pandas` (Data Analysis), `SQL (INNER JOIN)`, `Financial Logic Modeling`
 
 ## License
-- MIT License
+
+MIT License
