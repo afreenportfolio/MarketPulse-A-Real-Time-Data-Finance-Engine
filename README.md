@@ -3,12 +3,14 @@
 This phase focuses on taking the raw stock data stored in `data.json` and adding it into a structured MySQL relational database.
 
 ### Features
+
 - Reads local JSON data and prepares it for SQL insertion.
 - Uses `INSERT ... ON DUPLICATE KEY UPDATE` to ensure data stays fresh without creating duplicate date entries.
 - Designed to build a long-term historical record. By appending new daily data while preserving previous entries, the database grows beyond the 100-day limit of the standard "Compact" API response, enabling long-term trend analysis.
 - Utilizes `.env` files to keep database credentials secure.
 
 ### Database Schema
+
 - The data is stored in a table named `ibm_daily_stock` with the following structure:
 
 `+-------------+---------------+------+-----+---------+-------+`
@@ -32,6 +34,7 @@ This phase focuses on taking the raw stock data stored in `data.json` and adding
 `+-------------+---------------+------+-----+---------+-------+`
 
 ### Setup & Installation
+
 1. Download `requirements.txt` and install the required libraries by running `pip install -r requirements.txt` in your terminal.
 2. Create the database and table in MySQL terminal.
    - `CREATE DATABASE real_time_market_pulse_dashboard;`
@@ -41,6 +44,7 @@ This phase focuses on taking the raw stock data stored in `data.json` and adding
 5. Copy/download the python script from this repository and run it using `python real_time_market_pulse_dashboard_mysql_integration.py`
 
 ### Challenges
+
 - Selecting the correct data types to ensure financial data accuracy. Used `DECIMAL(10,4)` for stock prices instead of `FLOAT` or `DOUBLE` to avoid `floating-point errors` that can occur during financial calculations, and used `BIGINT` for volume to accommodate high-frequency trading numbers.
 - Preventing the script from crashing or creating duplicate rows if the same data was uploaded more than once (e.g., if the script was ran twice on the same day). Implemented the `INSERT ... ON DUPLICATE KEY UPDATE` logic. This ensures the database stays clean and reflects the most recent data without errors.
 - Encountering the ProgrammingError: `Cursor is not connected` error. Leart about Python indentation and loop logic. The connection and cursor were being closed inside the loop after the first record, rather than outside the loop after all 100 records were processed.
@@ -48,4 +52,5 @@ This phase focuses on taking the raw stock data stored in `data.json` and adding
 - Keeping sensitive database passwords and API keys out of the source code to follow security best practices. Integrated the `python-dotenv` library to pull credentials from a local `.env` file, ensuring they aren't accidentally pushed to a public GitHub repository.
 
 ### Final Database Output
+
 - Final databse output can be gotten by running `SELECT * FROM ibm_daily_stock;` in MySQL terminal
